@@ -1,0 +1,423 @@
+/* 
+
+EXPERIMENT 1 | "RESPONSIVE"
+
+~
+
+Using media queries, and thinking mobile-first, set up the responsive layout
+for desktop and mobile size screens as shown in the Figma mockup (link below):
+
+https://www.figma.com/file/I48fdCsuxmczvIOxWUojfr/Responsive-example?node-id=1%3A2
+
+~
+
+CSS Grid can be a huge help here (it's great for almost all layout stuff for web)
+and there are a few links to help you get started on the class resources page:
+
+https://ianmcdonald.ca/resources/
+
+~
+
+You can also use media queries to automatically switch between the light and dark
+modes as seen in the mockup too! Media queries can work to change or alter the
+websites styles depending on some condition of your choosing (i.e. when the screen
+is at least this wide, apply these styles; or if the site visitor has their device 
+set to dark mode, apply these styles! Some media query info is here but we will go 
+through this together in class:
+
+https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+
+
+~ 
+
+Have fun, break things, try new things ... this is an experiment after all :)
+
+
+Ok, now for the styles!
+
+*/
+
+
+
+
+
+/* COLOR VARIABLES
+============================================================================== */
+
+:root {
+  --accent: #ffe791;
+  --light: rgb(28, 116, 151);
+  --dark: #828678;
+}
+
+
+
+
+
+/* BASE STYLES
+============================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  background: var(--light);
+  color: var(--accent);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  min-height: 100vh;
+  padding: 0.5em;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.container {
+  max-width: 35em;
+}
+
+
+
+
+
+/* TYPOGRAPHY
+============================================================================== */
+
+h1 {
+  font-size: 2em;
+  line-height: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 1em 0;
+  font-size: 1.5em;
+}
+
+h3 {
+  margin: 0 0 1em 0;
+  font-size: 1em;
+}
+
+p {
+  margin: 0 0 1em 0;
+  font-size: 1em;
+}
+
+a {
+  color: inherit;
+}
+
+
+
+
+
+/* CARDS
+============================================================================== */
+
+.cards {
+  margin-top: 2em;
+}
+
+.card {
+  background-color: var(--accent);
+  color: var(--light);
+  text-decoration: none;
+  padding: 0.5em;
+  display: block;
+  margin-bottom: 1em;
+  border: 2px solid var(--accent);
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+.card:hover {
+  background-color: var(--light);
+  color: var(--accent);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.5em 0;
+  transition: transform 0.75s;
+  transform-origin: bottom;
+}
+
+.card:hover img {
+  transform: scale(1.2);
+}
+
+.card p {
+  font-weight: normal;
+}
+
+
+
+
+
+
+/* BUTTONS
+============================================================================== */
+
+.button {
+  display: inline-block;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 0.5em 1em;
+  transition: all 0.5s;
+  text-decoration: none;
+  outline: none;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.button:hover {
+  color: var(--light);
+  background-color: var(--accent);
+}
+
+.invert {
+  color: var(--light);
+  background-color: var(--accent);
+  border: 2px solid var(--light);
+}
+
+.invert:hover {
+  color: var(--accent);
+  background-color: var(--light);
+}
+
+
+
+
+
+/* HEADER
+============================================================================== */
+
+header {
+  display: grid;
+  justify-items: center;
+  align-content: space-between;
+  min-height: 100vh;
+}
+
+.badge {
+  margin-top: 2em;
+}
+
+.banner-image {
+  background-image: url(images/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 50vh;
+  min-height: 10em;
+}
+
+
+
+
+
+/* CONTACT FORM
+============================================================================== */
+
+form {
+  width: 100%;
+}
+
+input, textarea {
+  display: block;
+  color: var(--accent);
+  background-color: var(--light);
+  padding: 0.5em;
+  border: 2px solid var(--accent);
+  transition: all 0.5s;
+  text-decoration: none;
+  outline: none;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  margin-bottom: 1em;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+}
+
+input:focus, textarea:focus {
+  background-color: var(--accent);
+  color: var(--light);
+}
+
+label {
+  font-size: 0.75em;
+  font-weight: bold;
+  display: block;
+  margin: 0;
+}
+
+::placeholder {
+  color: var(--accent);
+  opacity: 50%;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/* WHO WE ARE
+============================================================================== */
+
+.who-we-are {
+  background-color: var(--accent);
+  margin-bottom: 25vh;
+  color: var(--light);
+}
+
+
+
+
+
+
+/* FOOTER
+============================================================================== */
+footer {
+  padding: 0.5em;
+  display: grid;
+  justify-items: center;
+  row-gap: 2em;
+  align-content: end;
+  align-items: end;
+  text-align: center;
+  grid-template-columns: 1fr;
+}
+
+
+
+
+/* MEDIA QUERIES
+============================================================================== */
+
+@media (min-width:600px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.75em;
+    background-color: grey;
+    color: aqua;
+    padding: 1em;
+  }
+}
+
+@media (min-width:900px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .contact-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.75em;
+    color: rgb(168, 242, 242);
+  }
+}
+
+@media (min-width:600px) {
+    .card:hover {
+      background-color: grey;
+      color: aqua;
+    }
+}
+
+@media (min-width:600px) {
+  .card {
+    background-color: rgb(64, 64, 64);
+    color: rgb(168, 242, 242);
+    border: 2px solid rgb(64, 64, 64)
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    font-size: 24px;
+    background-color: rgb(7, 51, 78);
+    color: rgb(168, 242, 242);
+  }
+}
+  
+@media (min-width:600px){
+  .input:focus {
+    background-color: rgb(64, 64, 64);
+    color: rgb(168, 242, 242);
+  }
+}
+
+@media (min-width:600px){
+  .who-we-are {
+    background-color:rgb(64, 64, 64);
+    margin-bottom: 25vh;
+    color: rgb(168, 242, 242);
+  }
+}
+
+@media (min-width:600px){
+  .button {
+    display: inline-block;
+    color: rgb(168, 242, 242);
+    border: 2px solid rgb(168, 242, 242);
+    background-color: rgb(7, 51, 78);
+  }
+}
+
+@media (min-width:600px){
+  .button:hover {
+    color: rgb(168,242,242);
+    border: 2px solid rgb(168, 242,242);
+    background-color: rgb(64, 64, 64);
+  }
+}
+
+@media (min-width:600px){
+  .invert {
+    background-color: rgb(64, 64, 64);
+    border: 2px solid rgb(168, 242, 242);
+    color: rgb(168, 242, 242);
+  }
+  
+}
+
+@media (min-width:600px){
+  .invert:hover {
+    color: rgb(168, 242, 242);
+    background-color: rgb(7, 51, 78);
+    border: 2px solid rgb (168,242, 242)
+  }
+}
+
+
